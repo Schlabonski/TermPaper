@@ -1,8 +1,14 @@
 \documentclass[english]{beamer}
 \uselanguage{english}
 
+%% PACKAGES %%
+
+\usepackage[utf8]{inputenc}
 \usepackage[width=0.8cm, height=1.2cm]{ufcd}
 \usepackage{textpos}
+\usepackage{chronology} % used for timelines 
+\usepackage{graphicx}
+\usepackage{tikz}
 
 \mode<presentation>
 {
@@ -16,6 +22,8 @@
 \end{frame}
 }
 
+%% NEW COMMANDS %%
+
 \newcommand{\backupbegin}{
    \newcounter{framenumberappendix}
    \setcounter{framenumberappendix}{\value{framenumber}}
@@ -26,20 +34,54 @@
   \addtocounter{framenumber}{\value{framenumberappendix}} 
 }
 
+\newcommand{\portraitpic}[1]{
+  \begin{textblock*}{1.6cm}(9.7cm, 0cm)
+    \includegraphics[width=\textwidth]{#1}
+  \end{textblock*}
+}
+
+\newcommand{\picpos}[4]{
+  \begin{textblock*}{#1}(#2, #3)
+    \includegraphics[width=\textwidth]{#4}
+  \end{textblock*}
+}
+
+\renewcommand{\event}[3][e]{%
+  \pgfmathsetlength\xstop{(#2-\theyearstart)*\unit}%
+  \ifx #1e%
+  \draw[fill=Uni-Blau,draw=none,opacity=0.5]%
+  (\xstop, 0) circle (0.5\unit)%
+  node[opacity=1,rotate=45,right=.5\unit] {#3};%
+  \else%
+  \pgfmathsetlength\xstart{(#1-\theyearstart)*\unit}%
+  \draw[fill=Uni-Blau,draw=none,opacity=0.5,rounded corners=.2\unit]%
+  (\xstart,-.5\unit) rectangle%
+  node[opacity=1,rotate=45,right=.5\unit] {#3} (\xstop,.5\unit);%
+\fi}%
+
+
+
+
+%% TITLE PAGE %%
 \title[Nobelprize 2012]{Nobel prize in physics 2012}
 \subtitle{S. Haroche and D. Wineland}
 \author[F.~Thielemann]{Fabian~Thielemann}
 \institute{Institute of Physics}
 
-\graphicspath{{}}
+\graphicspath{{../Figures/}}
 
 \begin{document}
   \begin{frame}[t]
     \titlepage
   \end{frame}
+  
+  \include{introduction}
+  \include{haroche}
+  \include{wineland}
+  \include{outlook}
 
   %\appendix
   %\backupbegin
-  \include{bibliography}
+  %\include{bibliography}
   %\backupend
 \end{document}

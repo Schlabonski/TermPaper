@@ -9,6 +9,8 @@
 \usepackage{chronology} % used for timelines 
 \usepackage{graphicx}
 \usepackage{tikz}
+\usepackage{braket}
+\usepackage{scalerel, stackengine, amsmath} % needed for equalhat
 
 \mode<presentation>
 {
@@ -46,6 +48,15 @@
   \end{textblock*}
 }
 
+\newcommand\equalhat{\mathrel{\stackon[1.5pt]{=}{\stretchto{%
+            \scalerel*[\widthof{=}]{\wedge}{\rule{1ex}{3ex}}}{0.5ex}}}}
+
+\newcommand{\textpos}[4]{
+  \begin{textblock*}{#1}(#2, #3)
+    #4
+  \end{textblock*}
+}
+
 \renewcommand{\event}[3][e]{%
   \pgfmathsetlength\xstop{(#2-\theyearstart)*\unit}%
   \ifx #1e%
@@ -64,7 +75,7 @@
 
 %% TITLE PAGE %%
 \title[Nobelprize 2012]{Nobel prize in physics 2012}
-\subtitle{S. Haroche and D. Wineland}
+\subtitle{Serge Haroche and David Wineland}
 \author[F.~Thielemann]{Fabian~Thielemann}
 \institute{Institute of Physics}
 

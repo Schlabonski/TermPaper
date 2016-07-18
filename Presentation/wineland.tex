@@ -1,5 +1,11 @@
 \section{David Wineland}
 
+\begin{frame}[t]{David Wineland: In a nutshell}
+  \portraitpic{wineland.jpg}
+  \vspace{3cm}
+  \includegraphics[width=\textwidth]{dw_nutshell.pdf}
+\end{frame}
+
 \begin{frame}[t]{David Wineland: Early life}
   \portraitpic{wineland.jpg}
   \visible<3>{
@@ -55,10 +61,22 @@
     \picpos{3cm}{1cm}{1.5cm}{hans_dehmelt_np.jpg}
   }
   \visible<2>{
-    \picpos{7cm}{1cm}{2cm}{monoelectron_title.jpg}
+    \picpos{8cm}{1cm}{2cm}{monoelectron_title.jpg}
   }
   \visible<3>{
-    \picpos{7cm}{1cm}{2cm}{monoelectron_plot_marked.jpg}
+    \picpos{8cm}{0.5cm}{2cm}{dw_penning_trap.pdf}
+  }
+  \visible<4->{
+    \picpos{9cm}{1cm}{2.5cm}{dw_monoelectron_plot.pdf}
+  }
+  \visible<5>{
+    \picpos{9cm}{1cm}{2.5cm}{dw_monoelectron_plot1.pdf}
+  }
+  \visible<6>{
+    \picpos{9cm}{1cm}{2.5cm}{dw_monoelectron_plot2.pdf}
+  }
+  \visible<7>{
+    \picpos{9cm}{1cm}{2.5cm}{dw_monoelectron_plot3.pdf}
   }
   \begin{minipage}[t][4.5cm][t]{\textwidth-1.5cm}
     \begin{itemize}
@@ -67,9 +85,12 @@
     \end{itemize}  
   \end{minipage}
   \begin{minipage}[t][0.2\textheight][t]{\textwidth}
-    \begin{chronology}[10]{1940}{2016}{\textwidth}{5cm}
-      \event[1970]{1975}{'70 -- '75}
-    \end{chronology}
+    \visible<1-2>{
+      \begin{chronology}[10]{1940}{2016}{\textwidth}{5cm}
+        \visible<1>{\event[1970]{1975}{'70 -- '75}}
+        \visible<2>{\event{1973}{'73}}
+      \end{chronology}
+    }
   \end{minipage}
 \end{frame}
 
@@ -86,7 +107,8 @@
   \end{minipage}
   \begin{minipage}[t][0.2\textheight][t]{\textwidth}
     \begin{chronology}[10]{1940}{2016}{\textwidth}{5cm}
-      \event[1970]{1975}{'70 -- '75}
+      \visible<>{\event[1970]{1975}{'70 -- '75}}
+      \visible<1>{\event{1975}{'75}}
     \end{chronology}
   \end{minipage}
 \end{frame}
@@ -121,19 +143,19 @@
     \picpos{9cm}{1cm}{2.5cm}{dw_doppler_cooling_title_full.jpg}
   }
 
-  \visible<4>{
-    \picpos{5cm}{0.5cm}{2.5cm}{dw_laser_cooling_ions_setup.pdf}
-  }
-
-  \visible<4>{
-    \picpos{5cm}{6cm}{3cm}{dw_laser_cooling_ions_plot.pdf}
+  \visible<4-5>{
+    \picpos{5.5cm}{0.5cm}{3cm}{dw_laser_cooling_ions_setup.pdf}
   }
 
   \visible<5>{
+    \picpos{5.5cm}{6cm}{3.5cm}{dw_laser_cooling_ions_plot.pdf}
+  }
+
+  \visible<6>{
     \picpos{9cm}{1cm}{2.5cm}{dw_doppler_cooling_title.jpg}
   }
   
-  \visible<5>{
+  \visible<6>{
     \picpos{9cm}{1cm}{4.8cm}{dehmelt_toschek_cooling_title.jpg}
   }
    
@@ -165,13 +187,15 @@ Toschek's lab in Heidelberg, with the same goal of demonstrating cooling.''\end{
 
 \begin{frame}[t]{David Wineland: Research}
   \portraitpic{wineland.jpg}
-  \visible<1->{
-    \picpos{9cm}{.7cm}{.7cm}{dw_single_mg_title.pdf}
+  \visible<1,5>{
+    \picpos{9cm}{.7cm}{1.7cm}{dw_single_mg_title.pdf}
   }
-  \visible<2>{
-    \picpos{7cm}{1cm}{3.6cm}{dw_single_mg_plot.pdf}
+  \visible<2-4>{
+    \picpos{8cm}{1cm}{1.5cm}{dw_single_mg_plot.pdf}
   }
-  \visible<3>{\picpos{9cm}{.7cm}{4.1cm}{dehmelt_mono_ion_title.pdf}}
+  \visible<3-4>{\picpos{8cm}{1cm}{1.5cm}{dw_single_mg_plot1.pdf}}
+  \visible<4>{\picpos{8cm}{1cm}{1.5cm}{dw_single_mg_plot2.pdf}}
+  \visible<5>{\picpos{9cm}{.7cm}{4.1cm}{dehmelt_mono_ion_title.pdf}}
 
   \begin{minipage}[t][4.5cm][t]{\textwidth-1.5cm}
     \begin{itemize}
@@ -194,12 +218,13 @@ Toschek's lab in Heidelberg, with the same goal of demonstrating cooling.''\end{
     \picpos{8cm}{0.5cm}{1.9cm}{dw_recoilless_single_ion_title.pdf}
   }
 
-  \visible<2>{
-    \picpos{\textwidth}{0cm}{1.9cm}{dw_quantized_motion_plot.pdf}
-  }
+  %\visible<2>{
+  %  \picpos{\textwidth}{0cm}{1.9cm}{dw_quantized_motion_plot.pdf}
+  %}
   \begin{minipage}[t][4.5cm][t]{\textwidth-1.5cm}
     \begin{itemize}
-      \item Quantized motional states of the ion in the trap
+      \item Quantized motional states of the ion in the trap can be resolved
+        with a tunable laser
     \end{itemize}  
   \end{minipage}
   \begin{minipage}[t][0.2\textheight][t]{\textwidth}
@@ -236,6 +261,9 @@ Toschek's lab in Heidelberg, with the same goal of demonstrating cooling.''\end{
     \picpos{\textwidth}{0cm}{1.9cm}{sideband_cooling_scheme_7.pdf}
     \textpos{4cm}{7.5cm}{6cm}{\small $\rightarrow$ Atom cooled to motional ground state}
   }
+  \visible<2->{
+    \picpos{\textwidth}{0cm}{1.9cm}{sideband_cooling_scheme_states.pdf}
+  }
   \begin{minipage}[t][4.5cm][t]{\textwidth-1.5cm}
     \begin{itemize}
       \item Resolved sideband cooling to motional ground state
@@ -253,19 +281,23 @@ Toschek's lab in Heidelberg, with the same goal of demonstrating cooling.''\end{
 
 \begin{frame}[t]{David Wineland: Ion Quantum Jumps}
   \portraitpic{wineland.jpg}
-  \visible<3>{
-    \picpos{5.2cm}{6.8cm}{3.7cm}{DW_quantum_jumps_results.pdf}
-    \textpos{5cm}{7cm}{5.7cm}{\small $\rightarrow$ discrete occupation
-    of ground or excited state}
-  }
+
   \visible<1>{
     \picpos{8cm}{0.5cm}{1.9cm}{DW_quantum_jumps_title.pdf}
   }
 
-  \visible<2->{\picpos{7.5cm}{0cm}{1.9cm}{dw_quantum_jumps_scheme.pdf}}
-  \visible<2>{\textpos{5cm}{7.2cm}{4.5cm}{\small fluorescence only when ion occupies
+  \visible<2>{\picpos{7.5cm}{0cm}{1.9cm}{dw_quantum_jumps_scheme0.pdf}}
+  \visible<3>{\picpos{7.5cm}{0cm}{1.9cm}{dw_quantum_jumps_scheme1.pdf}}
+  \visible<4>{\picpos{7.5cm}{0cm}{1.9cm}{dw_quantum_jumps_scheme2.pdf}}
+  \visible<4>{\textpos{5cm}{7.5cm}{4.5cm}{\small fluorescence only when ion occupies
     ground state}}
-
+  \visible<5>{\picpos{7.5cm}{0cm}{1.9cm}{dw_quantum_jumps_scheme_level.pdf}}
+  
+  \visible<5>{
+    \picpos{7cm}{2.8cm}{3cm}{DW_quantum_jumps_results.pdf}
+    \textpos{6cm}{3cm}{5.5cm}{\small $\rightarrow$ quantum jumps between ground
+    and excited state}
+  }
   \begin{minipage}[t][4.5cm][t]{\textwidth-1.5cm}
     \begin{itemize}
       \item Quantum jumps of an ions electron shell
@@ -296,6 +328,7 @@ pulses \item<5> basic logic operations possible\end{itemize}}}
   \xrightarrow[\text{blue sideband}]{\hspace{0.5cm}\pi/2\text{-pulse on}\hspace{0.5cm}}
   \frac{1}{\sqrt{2}}\left( \ket{0}\ket{\downarrow} + \ket{1}\ket{\uparrow}\right)$}}
 
+  \visible<4>{\picpos{5cm}{0.8cm}{2.5cm}{qubits_arrow.pdf}}
   \begin{minipage}[t][4.5cm][t]{\textwidth-1.7cm}
     \begin{itemize}
       \item Use of trapped ion to store and manipulate two qubits

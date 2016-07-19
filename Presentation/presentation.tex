@@ -25,6 +25,8 @@
 \end{frame}
 }
 
+\beamertemplatenavigationsymbolsempty
+
 %% NEW COMMANDS %%
 
 \newcommand{\backupbegin}{
@@ -56,6 +58,14 @@
   \begin{textblock*}{#1}(#2, #3)
     #4
   \end{textblock*}
+}
+
+\newcommand{\source}[1]{
+  \begin{textblock*}{\textwidth}(0, \textheight-0.85cm)
+    \begin{flushright}
+      {\color{Mittel-Grau}\tiny [#1]}
+    \end{flushright}
+  \end{textblock*}  
 }
 
 \renewcommand{\event}[3][e]{%

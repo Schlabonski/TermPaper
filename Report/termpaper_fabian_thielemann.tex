@@ -1,0 +1,47 @@
+\documentclass[paper=a4, fontsize=12pt, xcolor=dvipsnames]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[utf8]{inputenc}
+\usepackage{cmbright}
+\usepackage[english]{babel} 
+\usepackage{amsmath}
+\usepackage{braket}
+\usepackage{float} %placing floats(H)
+\usepackage{graphicx}
+\usepackage[top=2in, bottom=1.5in, left=1.25in, right=1in]{geometry} %setting merges
+\usepackage{fancyhdr}%headers/footers
+\pagestyle{fancy} 
+\usepackage[font={color=gray1},figurename=Fig.,labelfont={color=blue}]{caption}
+\usepackage{hyperref}
+\usepackage{xfrac}
+
+
+% BIBLIOGRAPHY
+% using biblatex and biber
+\usepackage[
+style=nature,              % Zitierstil
+isbn=false,                % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
+pagetracker=true,          % ebd. bei wiederholten Angaben (false=ausgeschaltet, page=Seite, spread=Doppelseite, true=automatisch)
+maxbibnames=50,            % maximale Namen, die im Literaturverzeichnis angezeigt werden (ich wollte alle)
+maxcitenames=3,            % maximale Namen, die im Text angezeigt werden, ab 4 wird u.a. nach den ersten Autor angezeigt
+autocite=inline,           % regelt Aussehen für \autocite (inline=\parancite)
+block=space,               % kleiner horizontaler Platz zwischen den Feldern
+backref=false,              % Seiten anzeigen, auf denen die Referenz vorkommt
+backrefstyle=three+,       % fasst Seiten zusammen, z.B. S. 2f, 6ff, 7-10
+date=short,                % Datumsformat
+hyperref=true,
+backend = biber
+]{biblatex}
+\setlength{\bibitemsep}{1em}     % Abstand zwischen den Literaturangaben
+\setlength{\bibhang}{2em}        % Einzug nach jeweils erster Zeile
+\bibliography{bibliography}
+
+\begin{document}
+  \include{introduction}
+  \include{theory}
+  \include{haroche}
+  \include{wineland}
+  \include{conclusion}
+
+  \newpage
+  \printbibliography
+\end{document}

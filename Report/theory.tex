@@ -1,0 +1,142 @@
+\section{Theory}
+
+\subsection{Jaynes-Cummings Hamiltonian}
+Rabi cycles are a phenomenon that occurs when an atom interacts with light.
+Both, Serge Haroche and David Wineland, investigated and made use of the
+shifts in energylevels and relative phases of states that appear when a laser
+shines in on an atom.  In
+order give a useful and complete description of Raby cycles, one has to take into
+account that the energy levels of the atom and of the photon field are
+quantized. The first ``fully quantized'' approach for the case of coherent light
+in a cavity and a two level system was given by Edwin Jaynes and Fred Cummings
+in 1963 \cite{jaynes1963comparison}. To describe the system (following
+\cite{gerry2005introductory}) 
+we introduce the total Hamiltonian, consisting of the Hamiltonian for the 
+ quantized photon field for a single mode, the Hamiltonian of the two level
+ system consisting of a ground state $\ket{g}$ and an excited state $\ket{e}$ and the
+ interaction Hamiltonian
+\begin{align}
+  \label{eq:JCM_H_tot}
+  {\hat {H}}={\hat {H}}_{{{\text{field}}}}+{\hat {H}}_{{{\text{atom}}}}+{\hat
+  {H}}_{{{\text{int}}}},
+\end{align}
+where, neglecting the zero point energies of field and atom,
+\begin{align}
+  \label{eq:JCM_H_field}
+  \hat{H}_{\text{field}} &= \hbar \omega_{\text{f}}\, \hat{a}^\dagger
+   \hat{a}\\
+  \label{eq:JCM_H_atom}
+  \hat{H}_{\text{atom}} &= \frac{\hbar \omega_a}{2} \, \hat{\sigma_3} \\
+  \label{eq:JCM_H_int}
+  \hat{H}_{\text{int}} &= \hbar \omega_{\text{int}} \left( \hat{\sigma}_+ +
+\hat{\sigma}_-\right)\left(\hat{a} + \hat{a}^\dagger\right).
+\end{align}
+Here $\hat{a}^\dagger$ and $\hat{a}$ are the creation and annihilation operators
+that appear in the quantization of the electromagnetic field\footnote{To solve
+the free field equation of the elmg. field one usually uses the Fourier ansatz
+$$A^\mu(x) = \int \text{d}\tilde{k} \sum_{\lambda=0}^3 \left[ a_\lambda(\vec{k})
+\epsilon^\mu_\lambda(k)\text{e}^{-ikx} +
+a^\dagger_\lambda(\vec{k})\epsilon^\mu_\lambda(k)^* \text{e}^{+ikx}\right], $$
+where $\lambda$ goes over all possible polarizations. When demanding that
+$A^\mu$ and its conjugate field $\pi^\nu$ obey the canonical quantization
+relation, the resulting commutator relations for $a_\lambda$ and
+$a_\lambda^\dagger$ allow the interpretation as creation and annihilation
+operators.}, the Pauli matrix $\hat{\sigma_3} = \ket{e}\bra{e} - \ket{g}\bra{g}$
+acts as the inversion operator of the atom, and the associated Pauli
+matrices $\hat{\sigma}_+ = \ket{e}\bra{g}$ and $\hat{\sigma}_- = \ket{g}\bra{e}$
+project any state $\ket{g}$ ($\ket{e}$) to $\ket{e}$ ($\ket{g}$) respectively
+and can thus be seen as atomic transition operators. It is now useful to look at
+the time evolution of the terms in the total Hamiltonian \eqref{eq:JCM_H_tot}.
+To do so we switch to the interaction picture, using the Hamiltonian without
+interaction $\hat{H}_0 = \hat{H}_{\text{atom}} + \hat{H}_{\text{field}}$ to
+describe the time evolution of the operators. For the  annihilation operator we
+have 
+\begin{align}
+  \label{eq:a_time_ev}
+  \hat{a}(t) &= e^{i\hat{H_0}t/\hbar}\, \hat{a}(0)\, e^{-i\hat{H_0}t/\hbar}
+  \nonumber \\
+  \intertext{using the Baker-Campbell-Hausdorff formula, we obtain}
+  &= \hat{a}(0) + \frac{it}{\hbar}\left[\hat{H}_0, \hat{a}\right] +
+  \frac{1}{2!}\left(\frac{it}{\hbar}\right)^2\left[\hat{H}_0, \left[\hat{H}_0,
+  \hat{a}\right] \right] + \dots \nonumber
+  \intertext{The first commutator is $\left[\hat{H}_0, \hat{a}\right] = -\hbar \omega_f
+  \hat{a}$ as $\hat{a}$ commutes with $\hat{H}_{\text{atom}}$ and
+  $\left[\hat{a}^\dagger, \hat{a}\right]=-1$. The nested commutators will thus only add higher orders of $\omega_f$. The
+time evolution then becomes}
+&= \hat{a}(0) \left(1 - it\omega_f + (it\omega_f)^2 + \dots  \right) \nonumber
+\\
+&= \hat{a}(0) e^{-i\omega_f t}.\,\footnotemark
+\end{align}
+\footnotetext{By looking at the preceeding footnote
+and considering that $kx$ is a scalar product of four-vectors but the
+integration over $\text{d}\tilde{k}$ is only over the three spatial components,
+we see that the time evolution behaviour is already built-in in this ansatz.}Correspondingly we obtain for the other operators
+\begin{align}
+  \label{eq:ops_time_ev}
+  \hat{a}^\dagger(t) &= \hat{a}^\dagger(0)e^{i\omega_ft}\\
+  \hat{\sigma}_\pm(t) &= \hat{\sigma}_\pm(0)e^{\pm i\omega_a t}
+\end{align}
+and therefore the full interaction Hamiltonian becomes
+\begin{align}
+  \label{eq:H_int_time_ev}
+  \hat{H}_{\text{int}}(t) = \hbar \omega_{\text{int}} \left( \hat{\sigma}_+ \hat{a}
+  \, e^{i(\omega_a-\omega_f)t} \right& + \hat{\sigma}_+ \hat{a}^\dagger\,
+    e^{i(\omega_a+\omega_f)t}\nonumber\\ & \left\quad + \hat{\sigma}_-\hat{a}\, e^{-i(\omega_a+\omega_f)t}
++ \hat{\sigma}_-\hat{a}^\dagger \, e^{-i(\omega_a-\omega_f)t}\right).
+\end{align}
+Assuming that the photon frequency $\omega_f$ is close to the transition
+frequency of the atom $\omega_a$, i.e. $\left| \omega_a-\omega_f \right|
+\ll \omega_a+\omega_f $, the rotating wave approximation can be applied. This
+means that all terms in $\hat{H}_{\text{int}}$ that oscillate with
+$\omega_a+\omega_f$ are
+neglected. Doing this and transforming back to the Schrödinger picture leaves us
+with the total Hamiltonian
+\begin{align}
+  \label{eq:H_tot_rot_wave}
+  \hat{H}_{\text{tot}}= \hbar \omega_f \hat{a}^\dagger \hat{a} + \frac{\hbar\omega_a}{2}\hat{\sigma}_3
+  + \hbar \omega_{\text{int}}\left( \hat{\sigma}_+\hat{a} +
+  \hat{\sigma}_-\hat{a}^\dagger  \right).
+\end{align}
+The last two terms can be seen as processes in which the atom aborbs or emmits
+one photon from the field while respectively changing its internal energy state.
+
+\subsection{Rabi Oscillations}
+Having found a Hamiltonian that describes the interaction of an atom with light,
+it is now interesting to investigate how this interaction influences the
+dynamics of the system. The original states of atom and fiel will no longer be
+eigenstates of the system and thus undergo a continuous oscillation, called Rabi
+oscillation. Bot, Serge Haroche and David Wineland have made experimental use of
+this effect in order to prepare and manipulate states. To describe the dynamics
+it is first useful to split the Hamiltonian in \eqref{eq:H_tot_rot_wave} into
+two parts, namely
+\begin{align}
+  \label{eq:H_I_H_II}
+  \hat{H}_I &= \hbar\omega_f\underbrace{\left( \hat{a}^\dagger\hat{a} +
+  \ket{e}\bra{e}\right)}_{\text{excitation number }\hat{N}_e} + \hbar \left( \frac{\omega_a}{2} -
+\omega_f)\right)\underbrace{\left(\ket{e}\bra{e} +
+\ket{g}\bra{g}\right)}_{\text{e$^-$ number projector }\hat{P}_e} \\
+\hat{H}_{II} &= -\hbar \underbrace{\left(\omega_a -
+\omega_f\right)\ket{g}\bra{g}}_{\equiv\Delta} +
+\hbar\omega_{\text{int}}\left( \hat{\sigma}_+\hat{a} +
+  \hat{\sigma}_-\hat{a}^\dagger  \right).
+\end{align}
+The first part $\hat{H}_I$ commutes with $\hat{H}_{\text{tot}}$ thus it is
+conserved over time and any interesting dynamics of the system are described by
+the second part. Let us now consider a state
+\begin{align}
+  \label{eq:psi_t}
+  \ket{\psi(t)} = C_1(t)\ket{e}\ket{n} + C_2(t)\ket{g}\ket{n+1} 
+\end{align}
+with initial conditions $C_1(0) = 1$ and $C_2(0)=0$. The time evolution is
+described by the time dependend Schrödinger equation
+$i\hbar\frac{\text{d}}{\text{d}t}\ket{\psi(t)}
+= \hat{H}_{II}\ket{\psi(t)}$. In the resonant case ($\Delta=0$) this can be
+exactly solved and yields
+\begin{align}
+  \label{eq:psi_t_solution}
+  C_1(t) &= \cos\left(\omega_{\text{int}}\sqrt{n+1}\,t\right) \\
+  C_2(t) &= -i\sin\left(\omega_\text{int} \sqrt{n+1} \,t\right)
+\end{align}
+
+\subsection{Dressed States}
+

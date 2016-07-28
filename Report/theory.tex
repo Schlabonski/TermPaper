@@ -1,4 +1,9 @@
 \section{Theory}
+Some theoretical concepts of quantum optics are necessary to understand the ways
+in which Serge Haroche and David Wineland experimentaly observed fundamental
+quantum mechanical effects. This section aims to introduce the basic model of a
+fully quantum mechanical description of atom-light interaction, the Jaynes-Cummings model, and
+one of the most used results of it, namely Rabi oscillations.
 
 \subsection{Jaynes-Cummings Hamiltonian}
 Rabi cycles are a phenomenon that occurs when an atom interacts with light.
@@ -138,5 +143,120 @@ exactly solved and yields
   C_2(t) &= -i\sin\left(\omega_\text{int} \sqrt{n+1} \,t\right)
 \end{align}
 
-\subsection{Dressed States}
+We see that the state of a two level system can be manipulated by sending in coherent
+  light, a technique that is crucial for many quantum optics experiments. In this 
+context a nomenclatur for pulses is established, describing to what extent the
+light interacts with the atom. A pulse of light is called ``$ r\pi$-pulse'' ($r\in \mathbb{R}$)
+if it interacts with an atom such that
+\begin{align}
+  \label{eq:r_pulse}
+  \omega_{\text{int}}\sqrt{n+1}\, t = \frac{r \pi}{2}.
+\end{align}
+A commonly used type of pulse is for example the $\pi/2$-pulse that takes e.g. a
+pure state $\ket{e}\ket{n}$ to a superposition
+state $\frac{1}{\sqrt{2}}\left(\ket{e}\ket{n}-i\ket{g}\ket{n+1}\right)$. In the basis spanned by $\left\lbrace
+\ket{e}\ket{n}, \ket{g}\ket{n+1}\right\rbrace$ a $\pi/2$-pulse can be
+represented in matrix form as
+\begin{align}
+  \label{eq:pi_half_matrix}
+U(\pi/2) = \frac{1}{\sqrt{2}}  
+\begin{pmatrix*}[r] 
+      1 & -i \\
+      -i & 1
+    \end{pmatrix*}.
+\end{align}
+The repeated action of a $\pi/2$-pulse on a two level system is shown
+graphically in Fig.~\ref{fig:rabi_cycle_rep}. It should be noted that starting
+from $\ket{e}\ket{n}$ and performing a full rabi cycle will introduce a global
+phase of $-1$ to the system. However this phase is not of physical importance
+when the two level system is closed and only measurable in comparison to a
+reference system.\footnote{$\braket{e|\hat{O}|e} = \braket{e|(-1)\hat{O}(-1)|e}$
+for any observable $\hat{O}$.}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.5\linewidth]{rabi_cycle_rep.pdf}
+  \caption{Graphic representation of the action of a $\pi/2$-pulse on the state
+    of a two level system. The photon number states (e.g. as in $\ket{e}\ket{n}$)
+    are not shown explicitly. The $(-)$ in front of the excited state indicates
+  the change of the total phase after one full cycle, which is of importance
+only if there is another state to which it should be compared in measurement.}
+  \label{fig:rabi_cycle_rep}
+\end{figure}
 
+\subsection{Dressed States}
+\label{sec:DressedStates}
+When we want to describe the dynamics of a two level system also in the
+off-resonant case requires diagonalization of the Hamiltonian
+\eqref{eq:H_tot_rot_wave}. The resulting eigenstates are called ``dressed
+states'', a wording that suggests that they are atom states ``dressed in light'' in contrast
+to the ``bare'' states of the atom without a light field. Using again the basis
+$\left\lbrace \ket{e}\ket{n}, \ket{g}\ket{n+1}\right\rbrace$ we can represent
+\eqref{eq:H_tot_rot_wave} as
+\begin{align}
+  \label{eq:H_tot_matrix}
+  \hat{H}_{\text{tot}} = 
+  \renewcommand*{\arraystretch}{2}
+  \begin{pmatrix*}[c]
+    n\omega_f + \frac{1}{2} \hbar\omega_a & \hbar\omega_{\text{int}} \sqrt{n+1}\\
+    \hbar\omega_{\text{int}} \sqrt{n+1}\quad & (n+1)\omega_f - \frac{1}{2}\omega_a
+  \end{pmatrix*}
+\end{align}
+and diagonalize it. From this we obtain the eigenenergies 
+\begin{align}
+  \label{eq:eigenergies}
+  E_\pm = \hbar\omega_f\left(n+\frac{1}{2}\right) \pm \hbar\Omega_n(\Delta)
+\end{align}
+with the off resonant Rabi frequency
+\begin{align}
+  \label{eq:Omega_n}
+  \Omega_n(\Delta) = \sqrt{\Delta^2 + 4 \omega_{\text{int}}^2(n+1)}.
+\end{align}
+The eigenenergies of the new eigenstates depend on the detuning of the light
+with respect to the atom transition. This shift in the energy levels is often
+referred to as the ``AC-Stark-shift''.
+The corresponding eigenstates in the given basis are
+\begin{align}
+  \label{eq:eigenstates}
+  \ket{n,+} &=  \cos(\Phi_n/2)\ket{e}\ket{n} +  \sin(\Phi_n/2) \ket{g}\ket{n+1}\\ 
+  \ket{n,-} &=  -\sin(\Phi_n/2)\ket{e}\ket{n} +  \cos(\Phi_n/2) \ket{g}\ket{n+1} 
+\end{align}
+where the angle $\Phi_n$ is given by
+\begin{align}
+  \label{eq:phi_n}
+  \Phi_n = \tan^{-1}\left( \frac{2\omega_{\text{int}}\sqrt{n+1}}{\Delta} \right)
+\end{align}
+which converges towards $\pi/2$ for $\Delta\rightarrow 0$. The dressed states
+are now useful for many applications in the field of quantum optics. Given a
+prepared state of a two level atom, one can determine the interaction of the
+atom with (not necessarily resonant) incident light by expressing the initial
+state in terms of the dressed states. As the dressed states are eigenstates of
+the total Hamiltonian their time evolution is trivial under application of the
+time evolution operator. In this way the dynamics can be calculated in the
+dressed states basis and afterwards (if needed) transformed back to the initial
+basis.
+
+\subsection{Far Off Resonance Case}
+The full Jaynes-Cummings Hamiltonian \eqref{eq:JCM_H_tot} without the rotating
+wave approximation can also be treated for the far-off resonant case
+$\Delta\gg\omega_a$. Interaction is in this case ruled by the effective
+Hamiltonian 
+\begin{align}
+  \label{eq:H_eff}
+  \hat{H}_{\text{eff}} = \hbar \chi \left[\hat{\sigma}_+\hat{\sigma_-} +
+  \hat{a}^\dagger \hat{a}\sigma_3 \right],
+\end{align}
+where $\chi$ depends on the photon number $n$ and the detuning $\Delta$
+\cite{gerry2005introductory}. Under this Hamiltonian a state
+\begin{align}
+  \label{eq:psi_evol_0}
+  \ket{\Psi(0)} = \frac{1}{\sqrt{2}} \left(\ket{e}\ket{n} +
+  \ket{g}\ket{n}\right)
+\end{align}
+will evolve according to 
+\begin{align}
+  \label{eq:psi_evol_t}
+  \ket{\Psi(t)} = \frac{1}{\sqrt{2}} \left( \ket{e}\ket{n} + e^{-i\,\chi
+  (\Delta,n)t} \ket{g}\ket{n}\right),
+\end{align}
+a time evolution that Serge Haroche used to non-destructively detect single
+photons (see Sec.~\ref{sec:QND}).

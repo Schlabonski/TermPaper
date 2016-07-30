@@ -1,18 +1,19 @@
 \section{Theory}
+\label{sec:Theory}
 Some theoretical concepts of quantum optics are necessary to understand the ways
-in which Serge Haroche and David Wineland experimentaly observed fundamental
+in which Serge Haroche and David Wineland experimentally observed fundamental
 quantum mechanical effects. This section aims to introduce the basic model of a
 fully quantum mechanical description of atom-light interaction, the Jaynes-Cummings model, and
-one of the most used results of it, namely Rabi oscillations.
+one of the most frequently appearing consequences of it, Rabi oscillations.
 
 \subsection{Jaynes-Cummings Hamiltonian}
-Rabi cycles are a phenomenon that occurs when an atom interacts with light.
 Both, Serge Haroche and David Wineland, investigated and made use of the
-shifts in energylevels and relative phases of states that appear when a laser
+shifts in energy levels and relative phases of states that appear when a laser
 shines in on an atom.  In
-order give a useful and complete description of Raby cycles, one has to take into
+order give a useful and complete description of the interaction of atoms with
+light, one has to take into
 account that the energy levels of the atom and of the photon field are
-quantized. The first ``fully quantized'' approach for the case of coherent light
+both quantized. The first ``fully quantized'' approach for the case of coherent light
 in a cavity and a two level system was given by Edwin Jaynes and Fred Cummings
 in 1963 \cite{jaynes1963comparison}. To describe the system (following
 \cite{gerry2005introductory}) 
@@ -38,7 +39,7 @@ where, neglecting the zero point energies of field and atom,
 \end{align}
 Here $\hat{a}^\dagger$ and $\hat{a}$ are the creation and annihilation operators
 that appear in the quantization of the electromagnetic field\footnote{To solve
-the free field equation of the elmg. field one usually uses the Fourier ansatz
+the free field equation of the electromagnetic field one usually uses the Fourier ansatz
 $$A^\mu(x) = \int \text{d}\tilde{k} \sum_{\lambda=0}^3 \left[ a_\lambda(\vec{k})
 \epsilon^\mu_\lambda(k)\text{e}^{-ikx} +
 a^\dagger_\lambda(\vec{k})\epsilon^\mu_\lambda(k)^* \text{e}^{+ikx}\right], $$
@@ -72,10 +73,10 @@ time evolution then becomes}
 \\
 &= \hat{a}(0) e^{-i\omega_f t}.\,\footnotemark
 \end{align}
-\footnotetext{By looking at the preceeding footnote
+\footnotetext{By looking at the preceding footnote
 and considering that $kx$ is a scalar product of four-vectors but the
 integration over $\text{d}\tilde{k}$ is only over the three spatial components,
-we see that the time evolution behaviour is already built-in in this ansatz.}Correspondingly we obtain for the other operators
+we see that the time evolution behavior is already built-in in this ansatz.}Correspondingly we obtain for the other operators
 \begin{align}
   \label{eq:ops_time_ev}
   \hat{a}^\dagger(t) &= \hat{a}^\dagger(0)e^{i\omega_ft}\\
@@ -102,13 +103,13 @@ with the total Hamiltonian
   + \hbar \omega_{\text{int}}\left( \hat{\sigma}_+\hat{a} +
   \hat{\sigma}_-\hat{a}^\dagger  \right).
 \end{align}
-The last two terms can be seen as processes in which the atom aborbs or emmits
+The last two terms can be seen as processes in which the atom absorbs or emits
 one photon from the field while respectively changing its internal energy state.
 
 \subsection{Rabi Oscillations}
 Having found a Hamiltonian that describes the interaction of an atom with light,
 it is now interesting to investigate how this interaction influences the
-dynamics of the system. The original states of atom and fiel will no longer be
+dynamics of the system. The original states of atom and field will no longer be
 eigenstates of the system and thus undergo a continuous oscillation, called Rabi
 oscillation. Bot, Serge Haroche and David Wineland have made experimental use of
 this effect in order to prepare and manipulate states. To describe the dynamics
@@ -133,7 +134,7 @@ the second part. Let us now consider a state
   \ket{\psi(t)} = C_1(t)\ket{e}\ket{n} + C_2(t)\ket{g}\ket{n+1} 
 \end{align}
 with initial conditions $C_1(0) = 1$ and $C_2(0)=0$. The time evolution is
-described by the time dependend Schrödinger equation
+described by the time dependent Schrödinger equation
 $i\hbar\frac{\text{d}}{\text{d}t}\ket{\psi(t)}
 = \hat{H}_{II}\ket{\psi(t)}$. In the resonant case ($\Delta=0$) this can be
 exactly solved and yields
@@ -145,7 +146,7 @@ exactly solved and yields
 
 We see that the state of a two level system can be manipulated by sending in coherent
   light, a technique that is crucial for many quantum optics experiments. In this 
-context a nomenclatur for pulses is established, describing to what extent the
+context a nomenclature for pulses is established, describing to what extent the
 light interacts with the atom. A pulse of light is called ``$ r\pi$-pulse'' ($r\in \mathbb{R}$)
 if it interacts with an atom such that
 \begin{align}
@@ -167,7 +168,7 @@ U(\pi/2) = \frac{1}{\sqrt{2}}
 \end{align}
 The repeated action of a $\pi/2$-pulse on a two level system is shown
 graphically in Fig.~\ref{fig:rabi_cycle_rep}. It should be noted that starting
-from $\ket{e}\ket{n}$ and performing a full rabi cycle will introduce a global
+from $\ket{e}\ket{n}$ and performing a full Rabi cycle will introduce a global
 phase of $-1$ to the system. However this phase is not of physical importance
 when the two level system is closed and only measurable in comparison to a
 reference system.\footnote{$\braket{e|\hat{O}|e} = \braket{e|(-1)\hat{O}(-1)|e}$
